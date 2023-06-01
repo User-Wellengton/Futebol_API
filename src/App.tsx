@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+//Router
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
+//Components
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+//Pages
+import Home from './pages/home/Home';
+import Paises from './pages/Paises/Paises';
+import Ligas from './pages/Ligas/Ligas';
+import Times from './pages/Times/Times';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <BrowserRouter>
+        <Navbar />
+        <div >
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/paises' element={<Paises />} />
+            <Route path="/ligas/:pais" element={<Ligas />} />
+            <Route path="/ligas" element={<Ligas />} />
+            <Route path="/times/:id" element={<Times />} />
+          </Routes>
+        </div>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,0 +1,19 @@
+.cardtimes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-bottom:  100px;
+    background-color: #000000;
+    }
+    
+    .cards{  
+             
+        margin:  15px 15px 15px 15px;    
+        padding: 50px;    
+        transition: transform 0.3s; 
+        }
+    
+    .cards:hover {
+        transform: scale(1.1); /* aumenta o tamanho do card em 10% quando o mouse passa por cima */
+      }
